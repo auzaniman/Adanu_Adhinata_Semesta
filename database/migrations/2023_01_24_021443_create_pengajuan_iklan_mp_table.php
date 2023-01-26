@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pelaporan_iklan', function (Blueprint $table) {
+        Schema::create('pengajuan_iklan_mp', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('screenshot_id');
-            $table->string('nama_adv');
-            $table->string('tim');
-            $table->string('status');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelaporan_iklan');
+        Schema::dropIfExists('pengajuan_iklan_mp');
     }
 };

@@ -16,11 +16,10 @@ class PelaporanIklanModel extends Model
   protected $fillable = [
     'user_id',
     'nama_adv',
-    'produk',
     'tim',
     'ss_akun',
     'ss_sisa_saldo',
-    'ss_e-statement',
+    'ss_e_statement',
   ];
 
   public function user()

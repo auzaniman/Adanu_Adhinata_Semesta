@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('pelaporan_iklan_mp', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->foreignId('screenshot_id');
             $table->text('toko');
             $table->string('nama_adv');
-            $table->text('ss_akun_toko');
-            $table->text('ss_sisa_saldo_toko');
-            $table->text('ss_e-statement');
+            $table->string('tim');
+            $table->string('status');
             $table->softDeletes();
             $table->timestamps();
         });

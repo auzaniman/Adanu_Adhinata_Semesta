@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pelaporan_iklan', function (Blueprint $table) {
+        Schema::create('screenshot_file', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('screenshot_id');
-            $table->string('nama_adv');
-            $table->string('tim');
-            $table->string('status');
+            $table->text('ss_akun')->nullable();
+            $table->text('ss_sisa_saldo')->nullable();
+            $table->text('ss_e_statement')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelaporan_iklan');
+        Schema::dropIfExists('screenshot_file');
     }
 };

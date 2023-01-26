@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>onclick Image Popup jQuery Demo</title>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Image Popup CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Image Popup JS -->
+    <script src="js/jquery.image-popup.js"></script>
+	<!-- Demo CSS -->
+	<link rel="stylesheet" href="css/demo.css">
+</head>
+ <body>
+	<header class="intro">
+	<h1> onclick Image Popup jQuery Demo </h1>
+	<p>Semplice plugin in jQuery - Image Gallery Popup.</p>
+	<p> Written in HTML, CSS, JavaScript (jQuery)... </p>
+	<div class="action">
+	<a href="https://www.codehim.com/lightbox/onclick-image-popup-jquery-lightbox/" title="Back to download and tutorial page" class="btn back">Back to Tutorial</a>
+	<a href="https://github.com/AleMay96/jQueryPlugin" title="View, Fork or Star on GitHub" class="btn github">View on GitHub</a>
+	</div>
+	</header>
+<main>
+ <article>
+	<p>The following is the example of onclick image popup jquery. </p>
+<ul id="imageGallery">
+    <li>
+    <a><img src="img/img1.jpg" alt="Sample Image 1"></a>
+    </li>
+        <li>
+    <a><img src="img/img2.jpg" alt="jQuery Image Popup - CodeHim"></a>
+    </li>
+        <li>
+    <a><img src="img/img3.jpg" alt="Sample Image 3"></a>
+    </li>
+        <li>
+    <a><img src="img/img4.jpg" alt="Sample Image 4"></a>
+    </li>
+        <li>
+    <a><img src="img/img5.jpg" alt="Sample Image 5"></a>
+    </li>
+</ul> </article>
+</main>
+
+<footer class="credit">Author: AleMay96 - Distributed By: <a title="Awesome web design code & scripts" href="https://www.codehim.com?source=demo-page" target="_blank">CodeHim</a></footer>
+
+<script>
+$(document).ready(function(){
+	$("#imageGallery").imagePopup({
+    overlay: "rgba(0, 0, 0, 0.7)",
+
+    closeButton:{
+        src: "img/close.png",
+        width: "40px",
+        height:"40px"
+    },
+    imageBorder: "10px solid #ffffff",
+    borderRadius: "6px",
+    imageWidth: "800px",
+    imageHeight: "auto",
+    imageCaption: {
+        exist: true,
+        color: "#ffffff",
+        fontSize: "18px"
+    },
+    open: function(){
+        console.log("opened");
+    },
+    close: function(){
+        console.log("closed");
+    }
+});
+
+});
+</script>
+
+ </body>
+</html>

@@ -71,7 +71,7 @@
                           </form>
                         </li>
                         @empty
-                        
+
                         @endforelse
                       </ul><!-- End List With badges -->
                     </div>
@@ -95,6 +95,10 @@
               <label for="nama_adv" class="form-label">Nama Adv</label>
               <input type="text" name="nama_adv" class="form-control" id="inputName5" value="{{ Auth::user()->name }}">
             </div>
+            <div class="col-md-6" hidden>
+              <label for="tim" class="form-label">Tim</label>
+              <input type="text" name="tim" class="form-control" id="inputName5" value="MP">
+            </div>
             <div class="col-md-12">
               <label for="toko" class="form-label">Toko</label>
               <select class="form-select" name="toko[]" id="multiple-select-field" data-placeholder="Pilih Toko" multiple>
@@ -108,8 +112,8 @@
               <input class="form-control" name="ss_akun_toko" type="file" id="formFile">
             </div>
             <div class="col-md-4">
-              <label for="ss_e-statement" class="form-label">SS Bank E-Statement</label>
-              <input class="form-control" name="ss_e-statement" type="file" id="formFile">
+              <label for="ss_e_statement" class="form-label">SS Bank E-Statement</label>
+              <input class="form-control" name="ss_e_statement" type="file" id="formFile">
             </div>
             <div class="col-md-4">
               <label for="ss_sisa_saldo" class="form-label">SS Sisa Saldo</label>

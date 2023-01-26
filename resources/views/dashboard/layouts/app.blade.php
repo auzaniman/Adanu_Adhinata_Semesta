@@ -3,15 +3,7 @@
 <head>
   @include('dashboard.components.meta')
   @include('dashboard.components.style')
-  
   <title>@yield('title')</title>
-  
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.5.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 <body>
   @include('dashboard.components.header')
@@ -36,12 +28,12 @@
       <i class="bi bi-check-circle me-1"></i>
       <strong>{{ session('status') }}</strong>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-        {{-- <span aria-hidden="true">&times;</span> --}}
       </button>
     </div>
     @endif
     {{-- End Alert --}}
 
+    {{-- Page Title --}}
     <div class="pagetitle">
       <h1>@yield('title')</h1>
       <nav>

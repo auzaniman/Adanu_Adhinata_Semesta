@@ -10,13 +10,13 @@
           <h5 class="card-title">Laporan Biaya Iklan Akuisisi Pekanan</h5>
 
           <!-- Form Pelaporan Biaya Iklan Akuisisi & LC -->
-          <form action="{{ route('post_pelaporan_ac') }}" class="row g-3" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('post_pengajuan_ac') }}" class="row g-3" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="col-md-4" hidden>
               <label for="user_id" class="form-label">User ID</label>
               <input type="text" name="user_id" class="form-control" id="inputName5" value="{{ Auth::user()->id }}">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4" hidden>
               <label for="nama_adv" class="form-label">Nama Adv</label>
               <input type="text" name="nama_adv" class="form-control" id="inputName5" value="{{ Auth::user()->name }}">
             </div>
@@ -24,21 +24,28 @@
               <label for="tim" class="form-label">Label</label>
               <select id="inputState" name="tim" class="form-select">
                 <option selected>Pilih...</option>
-                <option value="Akuisisi">Akuisisi</option>
-                <option value="LC">LC</option>
+                <option value="akuisisi">Akuisisi</option>
+                <option value="lc">LC</option>
               </select>
             </div>
-            <div class="col-md-4">
-              <label for="ss_akun" class="form-label">SS Akun</label>
-              <input class="form-control" name="ss_akun" type="file" id="formFile">
+            <div class="col-md-6">
+              <label for="produk" class="form-label">Produk</label>
+              <select id="inputState" name="produk" class="form-select">
+                <option selected>Pilih...</option>
+                <option value="etawaku">Etawaku</option>
+                <option value="etawalin">Etawalin</option>
+                <option value="freshmag">Freshmag</option>
+                <option value="bio_insuleaf">Bio Insuleaf</option>
+                <option value="zymuno">Zymuno</option>
+              </select>
             </div>
-            <div class="col-md-4">
-              <label for="ss_e_statement" class="form-label">SS Bank E-Statement</label>
-              <input class="form-control" name="ss_e_statement" type="file" id="formFile">
+            <div class="col-md-6">
+              <label for="jumlah_pengajuan" class="form-label">Jumlah Pengajuan Biaya (Tanpa Titik)</label>
+              <input type="text" name="jumlah_pengajuan" class="form-control" id="inputName5">
             </div>
-            <div class="col-md-4">
-              <label for="ss_sisa_saldo" class="form-label">SS Sisa Saldo</label>
-              <input class="form-control" name="ss_sisa_saldo" type="file" id="formFile">
+            <div class="col-md-6">
+              <label for="cap" class="form-label">CAP</label>
+              <input type="text" name="cap" class="form-control" id="inputName5">
             </div>
             <div class="">
               <button type="submit" class="btn btn-primary">Submit</button>

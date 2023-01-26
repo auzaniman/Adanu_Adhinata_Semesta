@@ -23,13 +23,11 @@ class FormPelaporanController extends Controller
 
     $data->user_id = Auth::user()->id;
     $data->nama_adv = Auth::user()->name;
-    $data->produk = $request->produk;
     $data->tim = $request->tim;
     $data->nama_adv = $request->nama_adv;
     $data['ss_akun'] = $request->file('ss_akun')->store('', 'public');
     $data['ss_sisa_saldo'] = $request->file('ss_sisa_saldo')->store('', 'public');
-    $data['ss_e-statement'] = $request->file('ss_e-statement')->store('', 'public');
-
+    $data['ss_e_statement'] = $request->file('ss_e_statement')->store('', 'public');
     $data->save();
 
     return redirect()->back()->with([
@@ -52,10 +50,11 @@ class FormPelaporanController extends Controller
 
     $data->user_id = Auth::user()->id;
     $data->nama_adv = Auth::user()->name;
+    $data->tim = $request->tim;
     $data['ss_akun_toko'] = $request->file('ss_akun_toko')->store('', 'public');
     $data['ss_sisa_saldo_toko'] = $request->file('ss_sisa_saldo_toko')->store('', 'public');
-    $data['ss_e-statement'] = $request->file('ss_e-statement')->store('', 'public');
-    
+    $data['ss_e_statement'] = $request->file('ss_e_statement')->store('', 'public');
+
     $data->toko = $request->toko;
     $toko = $data['toko'];
     $data['toko'] = implode(',', $toko);
@@ -91,6 +90,6 @@ class FormPelaporanController extends Controller
     ->with([
       'message' => 'berhasil dihapus',
       'status' => 'Berhasil dihapus'
-    ]);    
+    ]);
   }
 }

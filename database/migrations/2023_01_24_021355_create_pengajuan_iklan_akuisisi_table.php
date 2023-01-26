@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pelaporan_iklan', function (Blueprint $table) {
+        Schema::create('pengajuan_iklan_akuisisi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('screenshot_id');
             $table->string('nama_adv');
-            $table->string('tim');
-            $table->string('status');
+            $table->string('tim'); //Akuisisi atau LC
+            $table->string('produk');
+            $table->string('jumlah_pengajuan');
+            $table->string('cap');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelaporan_iklan');
+        Schema::dropIfExists('pengajuan_iklan_akuisisi');
     }
 };
